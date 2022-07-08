@@ -131,7 +131,7 @@ header {
   margin-right: 1rem;
 } 
 
-.nav-list__item a {
+.nav-list__item:not(.branding) a {
   font-size: 1.15rem;
 }
 
