@@ -7,9 +7,74 @@
 
 
   <link rel="stylesheet" type="text/css" href="styles/style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <script src="scripts/scripts.js" defer></script>
+
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script> -->
+
+  <!-- meta tags -->
+  <meta name="theme-color" content="#23a6d5">
 </head>
 <body>
-  
+  <div class="page-wrapper gradient-border">
+    <header class="">
+      <nav class="nav-wrapper">
+        <ul class="nav-list">
+          <li class="nav-list__item">
+            <a href="./pages/whats_coming.html" class="text-gradient">&lt;Whats Coming</a>
+          </li>
+          <li class="nav-list__item branding">PlanTrek</li>
+          <li class="nav-list__item">
+            <a href="./pages/current_status.html" class="text-gradient">Current Status&gt;</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+    
+      <div class="main-content__left">
+        <h1 class="main-heading">PlanTrek</h1>
+        <h2 class="sub-heading">Your planning tool</h2>
+      </div>
+
+      <div class="main-content__right">
+        <div class="main-content__right__information-text__wrapper">
+          <div class="information-text__first-part">
+            PlanTrek is a planning tool
+            <div class="word-switcher">
+              <div class="word-switcher__static-text">that helps you to plan your</div>
+              <ul class="word-switcher__dynamic-text">
+                <li>
+                  <span class="word-switcher__element text-gradient">Day</span>
+                </li>
+                <li>
+                  <span class="word-switcher__element text-gradient">Work</span>
+                </li>
+                <li>
+                  <span class="word-switcher__element text-gradient">Time</span>
+                </li>
+                <li>
+                  <span class="word-switcher__element text-gradient">Project</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="information-text__second-part">
+            It helps you to plan your day by giving you a list of things you need to do.
+            It also helps you to track your progress.
+          </div>
+        </div>
+        <div class="main-content__right__button">
+          <a href="./pages/whats_coming.html" class="button">Get Started</a>
+        </div>
+      </div>
+    
+    </main>
+    <footer></footer>
+  </div>
 </body>
 </html>
