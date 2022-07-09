@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>PlanTrek | Whats Coming</title>
 
   <link rel="stylesheet" type="text/css" href="../styles/style.css">
   
@@ -39,7 +39,56 @@
       </nav>
     </header>
     <main>
-
+      <section class="section--heading">
+        <h1>Whats Coming</h1>
+      </section>
+      <section class="section--content">
+        <div class="section--content__roadmap">
+          <div class="js-whats-coming-road-map">
+            <!-- roadmap is rendered automatically -->
+          </div>
+          <script src="../scripts/RoadMap.js"></script>
+          <script>
+            let whatsComingRoadMapContainer = document.querySelector('.js-whats-coming-road-map');
+            
+              let stops =  [
+                  {
+                    id: 1,
+                    name: "Name",
+                    description: " Description",
+                    expectedDate: new Date(),
+                    subpoints: [
+                      {
+                        id: 1,
+                        name: "Subpoint 1",
+                        description: "Subpoint description 1",
+                      },
+                      {
+                        id: 2,
+                        name: "Subpoint 2",
+                        description: "Subpoint description 2",
+                      },
+                      {
+                        id: 3,
+                        name: "Subpoint 3",
+                        description: "Subpoint description 3",
+                      },
+                      {
+                        id: 4,
+                        name: "Subpoint 4",
+                        description: "Subpoint description 4",
+                      }
+                    ],
+                  },
+                ]
+            let roadmap = new RoadMap(whatsComingRoadMapContainer, stops);
+            roadmap.render();
+            console.log(roadmap);
+            
+          </script>
+        </div>
+      </section>
+      <section class="section--content"></section>
     </main>
     <footer></footer>
   </div>

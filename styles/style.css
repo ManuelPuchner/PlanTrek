@@ -175,10 +175,6 @@ section.main__announcement {
   height: 100%;
 }
 
-.main-content__information-text__wrapper {
-
-}
-
 .information-text__first-part {
   font-size: 3rem;
 }
@@ -225,3 +221,15 @@ footer {
 }
 
 /* footer end */
+
+
+
+/* page whats coming */
+.section--heading {
+
+}
+
+.section--content {
+  
+}
+/* page whats coming end*/
