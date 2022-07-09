@@ -49,6 +49,10 @@ a {
   -webkit-text-fill-color: transparent;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 /* word switcher */
 .word-switcher {
   display: flex;
@@ -64,7 +68,6 @@ a {
   height: 2em;
   margin: 0;
   padding: 0;
-  padding-left: 3px;
   line-height: 2em;
   overflow: hidden;
   margin-bottom: -1px;
@@ -76,7 +79,7 @@ a {
   font-weight: 500;
   position: relative;
   top: 0;
-  animation: slide 12s steps(4) infinite, opacity 3s infinite;
+  animation: slide calc(var(--item-count) * 3s) steps(var(--item-count)) infinite, opacity 3s infinite;
   overflow: hidden;
 }
 
@@ -97,7 +100,7 @@ a {
 
 @keyframes slide {
   100% {
-    top: calc(-2em * 4);
+    top: calc(-2em * var(--item-count));
   }
 }
 
@@ -141,6 +144,7 @@ header {
   font-size: 2rem;
   font-weight: 700;
 }
+/* header end */
 
 
 /* Main */
@@ -149,15 +153,29 @@ main {
 
 }
 
-.main-content__left {
-
+main section {
+  margin-left: 7%;
+  margin-right: 7%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
 }
 
-.main-content__right {
-
+section.main__announcement {
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.main-content__right__information-text__wrapper {
+.main-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.main-content__information-text__wrapper {
 
 }
 
@@ -165,13 +183,39 @@ main {
   font-size: 3rem;
 }
 
-.information-text__first-part .word-switcher__dynamic-text {
-  margin-left: 0.5rem;
-}
-
 .information-text__second-part {
-
+  font-size: 1.4rem;
 }
+
+.main-content__button {
+  margin-top: 1rem;
+}
+
+.main-content__button a {
+  font-size: 1.5rem;
+  font-weight: 700;
+
+  /* color: white; */
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+
+  display: block;
+  margin: 0 auto;
+  color: #fff;
+
+  background: var(--four-color-gradient);
+  background-size: 200% 200%;
+  background-position: 100% 0%;
+
+  transition: background-position 300ms ease-in-out;
+}
+
+.main-content__button a:hover {
+background-position: 0% 100%;
+}
+
+/* main end */
 
 
 /* Footer */
@@ -179,3 +223,5 @@ main {
 footer {
 
 }
+
+/* footer end */
