@@ -20,10 +20,25 @@ class RoadMap {
   }
 
   render() {
-    for(let stop of this.stops) {
-      let stopContainer = stop.getHTML();
-      this.htmlContainer.appendChild(stopContainer);
+    let roadmapwrapper = document.createElement("div");
+    roadmapwrapper.classList.add("roadmap__wrapper");
+    // for(let stop of this.stops) {
+    //   let stopContainer = stop.getHTML();
+    //   roadmapwrapper.appendChild(stopContainer);
+    // }
+    for(let i = 0; i < this.stops.length; i++) {
+      let stopContainer = this.stops[i].getHTML();
+      if(i % 2 != 0) {
+        let emptyContainer = document.createElement("div");
+        emptyContainer.classList.add("roadmap__empty-container");
+        roadmapwrapper.appendChild(emptyContainer);
+        roadmapwrapper.appendChild(emptyContainer.cloneNode(true));
+
+        stopContainer.classList.add("right");
+      }
+      roadmapwrapper.appendChild(stopContainer);
     }
+    this.htmlContainer.appendChild(roadmapwrapper);
   }
 }
 
@@ -54,16 +69,16 @@ class Stop {
 
   getHTML() {
     this.htmlContainer.innerHTML = `
-      <div class="stop-name">
+      <div class="stop__name">
         <span>${this.name}</span>
       </div>
-      <div class="stop-time">
+      <div class="stop__description">
         <span>${this.description}</span>
       </div>
-      <div class="stop-expected-date">
+      <div class="stop__expected-date">
         <span>${this.dateFormatter.format(this.expectedDate)}</span>
       </div>
-      <div class="stop-subpoints">
+      <div class="stop__subpoints">
         ${this.subpoints.map((subpoint) => subpoint.getHTML().outerHTML).join("")}
       </div>
     `;
@@ -88,10 +103,10 @@ class Subpoint {
 
   getHTML() {
     this.htmlContainer.innerHTML = `
-      <div class="subpoint-name">
+      <div class="subpoint__name">
         <span>${this.name}</span>
       </div>
-      <div class="subpoint-time">
+      <div class="subpoint__description">
         <span>${this.description}</span>
       </div>
     `;

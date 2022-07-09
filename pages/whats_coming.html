@@ -8,6 +8,7 @@
   <title>PlanTrek | Whats Coming</title>
 
   <link rel="stylesheet" type="text/css" href="../styles/style.css">
+  <link rel="stylesheet" type="text/css" href="../styles/RoadMap.css">
   
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -54,7 +55,7 @@
               let stops =  [
                   {
                     id: 1,
-                    name: "Name",
+                    name: "Name 1",
                     description: " Description",
                     expectedDate: new Date(),
                     subpoints: [
@@ -80,7 +81,91 @@
                       }
                     ],
                   },
-                ]
+                  {
+                    id: 2,
+                    name: "Name 2",
+                    description: " Description",
+                    expectedDate: new Date(),
+                    subpoints: [
+                      {
+                        id: 1,
+                        name: "Subpoint 1",
+                        description: "Subpoint description 1",
+                      },
+                      {
+                        id: 2,
+                        name: "Subpoint 2",
+                        description: "Subpoint description 2",
+                      },
+                      {
+                        id: 3,
+                        name: "Subpoint 3",
+                        description: "Subpoint description 3",
+                      },
+                      {
+                        id: 4,
+                        name: "Subpoint 4",
+                        description: "Subpoint description 4",
+                      }
+                    ],
+                  },
+                  {
+                  id: 3,
+                  name: "Name 3",
+                  description: " Description",
+                  expectedDate: new Date(),
+                  subpoints: [
+                    {
+                      id: 1,
+                      name: "Subpoint 1",
+                      description: "Subpoint description 1",
+                    },
+                    {
+                      id: 2,
+                      name: "Subpoint 2",
+                      description: "Subpoint description 2",
+                    },
+                    {
+                      id: 3,
+                      name: "Subpoint 3",
+                      description: "Subpoint description 3",
+                    },
+                    {
+                      id: 4,
+                      name: "Subpoint 4",
+                      description: "Subpoint description 4",
+                    }
+                  ],
+                },
+                {
+                  id: 4,
+                  name: "Name 4",
+                  description: " Description",
+                  expectedDate: new Date(),
+                  subpoints: [
+                    {
+                      id: 1,
+                      name: "Subpoint 1",
+                      description: "Subpoint description 1",
+                    },
+                    {
+                      id: 2,
+                      name: "Subpoint 2",
+                      description: "Subpoint description 2",
+                    },
+                    {
+                      id: 3,
+                      name: "Subpoint 3",
+                      description: "Subpoint description 3",
+                    },
+                    {
+                      id: 4,
+                      name: "Subpoint 4",
+                      description: "Subpoint description 4",
+                    }
+                  ],
+                },
+              ]
             let roadmap = new RoadMap(whatsComingRoadMapContainer, stops);
             roadmap.render();
             console.log(roadmap);

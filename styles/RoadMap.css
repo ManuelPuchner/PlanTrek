@@ -1,0 +1,51 @@
+/* * {
+  background-color: rgba(0 255 0 / 0.1);
+  outline: red 2px solid;
+} */
+
+
+.roadmap__wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.roadmap__wrapper .stop {
+
+}
+
+.roadmap__wrapper .stop.right {
+  text-align: right;
+}
+
+.roadmap__wrapper .stop__name {
+
+}
+
+.roadmap__wrapper .stop__description {
+
+}
+
+.roadmap__wrapper .stop__expected-date {
+
+}
+
+.roadmap__wrapper .stop__subpoints {
+  padding-left: 1em;
+}
+.roadmap__wrapper .stop.right .stop__subpoints {
+  padding-right: 1em;
+  padding-left: 0;
+}
+
+
+.stop__subpoints .subpoint__name {
+
+}
+
+.stop__subpoints .subpoint__description {
+  padding-left: 0.5em;
+}
+.stop.right .stop__subpoints .subpoint__description {
+  padding-left: 0;
+  padding-right: 0.5em;
+}
