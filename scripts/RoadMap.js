@@ -22,12 +22,8 @@ class RoadMap {
   render() {
     let roadmapwrapper = document.createElement("div");
     roadmapwrapper.classList.add("roadmap__wrapper");
-    // for(let stop of this.stops) {
-    //   let stopContainer = stop.getHTML();
-    //   roadmapwrapper.appendChild(stopContainer);
-    // }
     for(let i = 0; i < this.stops.length; i++) {
-      let stopContainer = this.stops[i].getHTML();
+      let stopContainer = this.stops[i].getHTML(i);
       if(i % 2 != 0) {
         let emptyContainer = document.createElement("div");
         emptyContainer.classList.add("roadmap__empty-container");
@@ -38,7 +34,25 @@ class RoadMap {
       }
       roadmapwrapper.appendChild(stopContainer);
     }
+
     this.htmlContainer.appendChild(roadmapwrapper);
+
+    // middle tree
+    let middleTree = document.createElement("div");
+    middleTree.classList.add("roadmap__middle-tree");
+    
+    let middleTreeStem = document.createElement("div");
+    middleTreeStem.classList.add("roadmap__middle-tree__stem");
+
+    let domStops = document.querySelectorAll(".roadmap__stop");
+    for(let domStop of domStops) {
+      console.log(domStop);
+    }
+    middleTree.appendChild(middleTreeStem);
+    roadmapwrapper.appendChild(middleTree);
+  
+    
+
   }
 }
 
@@ -53,7 +67,7 @@ class Stop {
   dateFormatter;
   constructor(id, name, description, expectedDate) {
     this.htmlContainer = document.createElement("div");
-    this.htmlContainer.classList.add("stop");
+    this.htmlContainer.classList.add("roadmap__stop-wrapper");
     this.subpoints = new Array();
     this.id = id;
     this.name = name;
@@ -69,18 +83,23 @@ class Stop {
 
   getHTML() {
     this.htmlContainer.innerHTML = `
-      <div class="stop__name">
-        <span>${this.name}</span>
+      <div class="roadmap__stop">
+        <div class="stop__name">
+          <span>${this.name}</span>
+        </div>
+        <div class="stop__description">
+          <span>${this.description}</span>
+        </div>
+        <div class="stop__expected-date">
+          <span>${this.dateFormatter.format(this.expectedDate)}</span>
+        </div>
+        <div class="stop__subpoints">
+          ${this.subpoints
+            .map((subpoint) => subpoint.getHTML().outerHTML)
+            .join("")}
+        </div>
       </div>
-      <div class="stop__description">
-        <span>${this.description}</span>
-      </div>
-      <div class="stop__expected-date">
-        <span>${this.dateFormatter.format(this.expectedDate)}</span>
-      </div>
-      <div class="stop__subpoints">
-        ${this.subpoints.map((subpoint) => subpoint.getHTML().outerHTML).join("")}
-      </div>
+      <div class="roadmap__middle-tree__branch id-${this.id}"></div>
     `;
 
     return this.htmlContainer;
@@ -113,4 +132,12 @@ class Subpoint {
 
     return this.htmlContainer;
   }
+}
+
+function getHeightOfRow(row) {
+  let height = 0;
+  for (let i = 0; i < row.length; i++) {
+    height += row[i].offsetHeight;
+  }
+  return height;
 }

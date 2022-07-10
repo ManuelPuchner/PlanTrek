@@ -2,20 +2,29 @@
   background-color: rgba(0 255 0 / 0.1);
   outline: red 2px solid;
 } */
-
-
 .roadmap__wrapper {
   display: grid;
+  position: relative;
   grid-template-columns: 1fr 1fr;
+  column-gap: 33.33%;
 }
 
-.roadmap__wrapper .stop {
-
+.roadmap__wrapper .roadmap__stop {
+  width: fit-content;
 }
 
-.roadmap__wrapper .stop.right {
+.roadmap__stop-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.roadmap__stop-wrapper.right {
   text-align: right;
+  align-items: flex-end;
 }
+
+
 
 .roadmap__wrapper .stop__name {
 
@@ -32,7 +41,7 @@
 .roadmap__wrapper .stop__subpoints {
   padding-left: 1em;
 }
-.roadmap__wrapper .stop.right .stop__subpoints {
+.roadmap__wrapper .right .roadmap__stop  .stop__subpoints {
   padding-right: 1em;
   padding-left: 0;
 }
@@ -45,7 +54,69 @@
 .stop__subpoints .subpoint__description {
   padding-left: 0.5em;
 }
-.stop.right .stop__subpoints .subpoint__description {
+.right .roadmap__stop .stop__subpoints .subpoint__description {
   padding-left: 0;
   padding-right: 0.5em;
 }
+
+
+.roadmap__middle-tree {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 33.33%;
+  height: 100%;
+}
+
+.roadmap__middle-tree__stem {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1em;
+  height: 100vh;
+  background-image: var(--four-color-gradient);
+  border-radius: 5rem;
+}
+
+
+
+
+.roadmap__middle-tree__branch {
+  width: 80%;
+  height: 0.8em;
+  border-radius: 3rem;
+  background-image: var(--four-color-gradient);
+  background-size: 200% 100%;
+  background-repeat: repeat;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translateY(-50%);
+}
+
+.right .roadmap__middle-tree__branch {
+  left: -50%;
+}
+
+.roadmap__middle-tree__branch.id-1 {
+  background-position-x: 15%;
+  transform: scale(-1, 1);
+}
+
+.roadmap__middle-tree__branch.id-2 {
+  background-position-x: 47%;
+}
+
+.roadmap__middle-tree__branch.id-3 {
+  background-position-x: 75%;
+  transform: scale(-1, 1);
+}
+
+.roadmap__middle-tree__branch.id-4 {
+  background-position-x: 25%;
+  transform: scale(-1, 1);
+}
+
+
