@@ -51,95 +51,114 @@
           <script src="../scripts/RoadMap.js"></script>
           <script>
             let whatsComingRoadMapContainer = document.querySelector('.js-whats-coming-road-map');
-            
-              let stops =  [
-                  {
-                    id: 1,
-                    name: "Name 1",
-                    description: " Description",
-                    expectedDate: new Date(),
-                    subpoints: [
-                      {
-                        id: 1,
-                        name: "Subpoint 1",
-                        description: "Subpoint description 1",
-                      },
-                      {
-                        id: 2,
-                        name: "Subpoint 2",
-                        description: "Subpoint description 2",
-                      },
-                      {
-                        id: 3,
-                        name: "Subpoint 3",
-                        description: "Subpoint description 3",
-                      }
-                    ],
-                  },
-                  {
-                    id: 2,
-                    name: "Name 2",
-                    description: " Description",
-                    expectedDate: new Date(),
-                    subpoints: [
-                      {
-                        id: 1,
-                        name: "Subpoint 1",
-                        description: "Subpoint description 1",
-                      }
-                    ],
-                  },
-                  {
-                  id: 3,
-                  name: "Name 3",
-                  description: " Description",
-                  expectedDate: new Date(),
-                  subpoints: [
-                    {
-                      id: 1,
-                      name: "Subpoint 1",
-                      description: "Subpoint description 1",
-                    },
-                    {
-                      id: 2,
-                      name: "Subpoint 2",
-                      description: "Subpoint description 2",
-                    }
-                  ],
-                },
-                {
-                  id: 4,
-                  name: "Name 4",
-                  description: " Description",
-                  expectedDate: new Date(),
-                  subpoints: [
-                    {
-                      id: 1,
-                      name: "Subpoint 1",
-                      description: "Subpoint description 1",
-                    },
-                    {
-                      id: 2,
-                      name: "Subpoint 2",
-                      description: "Subpoint description 2",
-                    },
-                    {
-                      id: 3,
-                      name: "Subpoint 3",
-                      description: "Subpoint description 3",
-                    },
-                    {
-                      id: 4,
-                      name: "Subpoint 4",
-                      description: "Subpoint description 4",
-                    }
-                  ],
-                },
-              ]
+
+            let stops = [{
+              id: 1,
+              name: "Started the project",
+              description: "",
+              expectedDate: new Date("2022-07-09"),
+              subpoints: [{
+                id: 1,
+                name: "Planning",
+                description: "",
+              },
+              {
+                id: 2,
+                name: "Sketching",
+                description: "",
+              },
+              {
+                id: 3,
+                name: "Initialise code",
+                description: "",
+              }
+              ],
+            },
+            {
+              id: 2,
+              name: "Announcement page",
+              description: "",
+              expectedDate: new Date("2022-07-12"),
+              subpoints: [{
+                id: 1,
+                name: "Planning",
+                description: "",
+              }, {
+                id: 2,
+                name: "Sketching",
+                description: "",
+              }, {
+                id: 3,
+                name: "Coding",
+                description: "",
+              }],
+            },
+            {
+              id: 3,
+              name: "Frontend Design",
+              description: "Design in Figma (no code)",
+              expectedDate: new Date("2022-07-20"),
+              subpoints: [{
+                id: 1,
+                name: "Sketch on Paper",
+                description: '<a href="https://youtu.be/dQw4w9WgXcQ">View picture</a>',
+              },
+              {
+                id: 2,
+                name: "Figma Design",
+                description: '<a href="https://youtu.be/dQw4w9WgXcQ">View file</a>',
+              }],
+            },
+            {
+              id: 5,
+              name: "Announcement page what's coming",
+              description: "",
+              expectedDate: new Date("2022-07-18"),
+              subpoints: [{
+                id: 1,
+                name: "Design changes",
+                description: "",
+              },
+              {
+                id: 2,
+                name: "More content",
+                description: "",
+              }]
+            },
+            {
+              id: 4,
+              name: "Announcement page current status",
+              description: "",
+              expectedDate: new Date("2022-07-19"),
+              subpoints: [{
+                id: 1,
+                name: "Current status",
+                description: "",
+              },
+              {
+                id: 2,
+                name: "Newest git commits",
+                description: "",
+              }],
+            },
+            {
+              id: 6,
+              name: "Backend planning",
+              description: "Mocks, Wireframes, etc.",
+              expectedDate: new Date("2022-07-22"),
+              subpoints: [{
+                id: 1,
+                name: "Paper sketch",
+                description: "<a href='https://youtu.be/dQw4w9WgXcQ'>View picture</a>",
+              },
+              {
+                id: 2,
+                name: "Wireframes",
+                description: "<a href='https://youtu.be/dQw4w9WgXcQ'>View files</a>",
+              }],
+            }]
             let roadmap = new RoadMap(whatsComingRoadMapContainer, stops);
             roadmap.render();
-            console.log(roadmap);
-            
           </script>
         </div>
       </section>
