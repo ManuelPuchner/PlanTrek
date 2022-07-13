@@ -12,7 +12,7 @@ async function getFilteredCommits() {
   let commits = await getGitCommits();
   let filteredCommits = commits.map((commit) => {
     return {
-      sha: commit.sha.substring(0, 7),
+      sha: commit.sha,
       message: commit.commit.message,
       date: commit.commit.author.date,
     };
@@ -25,16 +25,21 @@ function getCommitHtml(commit) {
   let dateFormatter = new Intl.DateTimeFormat("de-DE", {
     year: "numeric",
     month: "long",
-    day: "numeric"
+    day: "numeric",
   });
   return `
-    <div class="commit">
-      <div class="commit-sha"><span class="text-gradient">#</span>${commit.sha}</div>
+    <a href="https://github.com/ManuelPuchner/PlanTrek/commit/${
+      commit.sha
+    }" class="commit">
+      <div class="commit-sha"><span class="text-gradient">#</span>${commit.sha.substring(
+        0,
+        7
+      )}</div>
       <div class="commit-message">${commit.message}</div>
       <div class="commit-date">${dateFormatter.format(
         new Date(commit.date)
       )}</div>
-    </div>
+    </a>
   `;
 }
 
@@ -47,6 +52,5 @@ async function renderCommits() {
     commitsDiv.appendChild(commitDiv);
   });
 }
-
 
 renderCommits();
