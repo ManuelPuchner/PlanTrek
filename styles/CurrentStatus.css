@@ -1,0 +1,46 @@
+html, body {
+  overflow: auto;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  background-size: 35% 100%;
+}
+
+.commits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-gap: 1em;
+  width: 100%;
+  margin: 0em auto;
+  padding: 1em;
+  --gradient-border-width: 2px;
+  --gradient-border-radius: 0.5em;
+}
+
+.commit {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6em;
+  box-shadow: 0 0.4rem 0.7rem rgba(0, 0, 0, 0.1);
+}
+
+.commit-message {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  display: block;
+  max-width: 270px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.commit-sha span {
+  font-weight: 500;
+}

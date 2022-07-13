@@ -20,6 +20,12 @@ html, body {
   font-family: 'Hind', "Arial",sans-serif;
   height: min(100vh, 100%);
   overflow: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 a {
@@ -30,7 +36,7 @@ a {
 .page-wrapper {
   --gradient-border-width: 4px;
   --gradient-border-radius: 0 0 0.65em 0.65em;
-  height: 100%;
+  min-height: 100%;
 }
 
 
@@ -40,7 +46,7 @@ a {
   background-image: linear-gradient(white, white), linear-gradient(-45deg, var(--grd-clr-1), var(--grd-clr-2), var(--grd-clr-3), var(--grd-clr-4));
   background-origin: border-box;
   background-clip: content-box, border-box;
-  border: double var(--gradient-border-width, 2) transparent;
+  border: double var(--gradient-border-width, 2px) transparent;
   border-radius: var(--gradient-border-radius, 0.5rem);
 }
 
