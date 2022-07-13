@@ -2,7 +2,7 @@ const commitsDiv = document.querySelector(".js-commits");
 
 async function getGitCommits() {
   let data = await fetch(
-    "https://api.github.com/repos/ManuelPuchner/PlanTrek/commits"
+    "https://api.github.com/repos/ManuelPuchner/ManuelPuchner-SchuelerInnen_Projektverwaltung/commits"
   );
   let commits = await data.json();
   return commits;
@@ -28,9 +28,9 @@ function getCommitHtml(commit) {
     day: "numeric",
   });
   return `
-    <a href="https://github.com/ManuelPuchner/PlanTrek/commit/${
-      commit.sha
-    }" class="commit">
+    <a href="https://github.com/ManuelPuchner/ManuelPuchner-SchuelerInnen_Projektverwaltung/commit/${
+    commit.sha
+  }" class="commit">
       <div class="commit-sha"><span class="text-gradient">#</span>${commit.sha.substring(
         0,
         7
